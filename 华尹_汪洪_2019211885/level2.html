@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 数组扁平化的递归算法
+        let ary = [1, [2, [3, [4, 5]]], 6];
+        let newary = [];
+        let j = 0;
+        function even(ary) {
+            for(let i = 0;i<ary.length;i++){
+                if(Array.isArray(ary[i])){
+                    // 如果数组中的元素是数组则进行递归操作
+                    even(ary[i]);
+                }else{
+                     // 如果数组中的元素是元素直接赋值
+                    newary[j++] = ary[i];
+                }
+            }
+        }
+        even(ary);
+        console.log(newary);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
